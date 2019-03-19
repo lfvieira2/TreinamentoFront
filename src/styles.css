@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+td {
+    text-align: center;
+}
+
+th {
+    background-color: greenyellow !important;
+}
+@media(min-width: 1200px){
+.container{
+    width: 1170px;
+    margin: 0 auto;
+}
+}
+
+

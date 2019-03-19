@@ -1,0 +1,47 @@
+<div class="container">
+  
+<div class="pesquisar">
+        <div class="ui-g">
+                <div class="ui-g-12">
+                  <h1>Consulta de Carros</h1>
+                </div>
+                <div class="ui-g-5 ui-fluid">
+                  <label>Nome</label>                 
+                    <input id="disabled-input" type="text" pInputText [(ngModel)]="nome"/>
+                    <button id="disabled-btn" type="button" (click)="searchByName()" pButton label="Pesquisar"></button>
+                  
+                </div>
+                
+          
+                <div class="ui-g-1" id="btAdicionar">
+                  <button pButton type="button" icon="pi pi-plus" label="Novo" pTooltip="Criar" tooltipPosition="top" (click)="novo()"></button>
+                </div>
+              </div>
+
+</div>
+
+<p-table [value]="carros">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Numero</th>
+            <th>Nome</th>
+            <th>Quantidade</th>
+            <th>Opções</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-carro>
+        <tr>
+            <td>{{carro.id_carro}}</td>
+            <td>{{carro.nome}}</td>
+            <td>{{carro.portas.length}}</td>
+            <td>
+                <button pButton type="button" icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top" id="atualiza" class="btnAtualizacao"
+                (click)="update(carro)"></button>
+
+              <button pButton type="button" icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top" id="excluir" class="ui-button-danger"
+                (click)="deleteID(carro.id_carro)"></button>  
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+</div>

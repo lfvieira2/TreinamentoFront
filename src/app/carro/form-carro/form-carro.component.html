@@ -1,0 +1,28 @@
+
+<div class="container" >
+    <h1>{{titulo}}</h1>
+    <form [formGroup]="formulario">
+      <label>Nome Carro:</label> 
+      <div class="form-group">
+          <div class="ui-inputgroup">
+              <span class="ui-g-12 ui-fluid">
+                  <input type="text" pInputText [(ngModel)]="carro.nome" name="nome"  formControlName="nome"/>
+                  
+              </span>
+          </div>
+      </div>
+    </form>
+    
+    <div id="porta">
+            
+            <app-porta [listaRecebida]="carro.portas" (emissorPorta)="recebendoPorta($event)"></app-porta>
+    </div>
+  
+    
+    <div class="footer">
+        <p-footer >
+        <button type="button" pButton icon="pi pi-check" (click)="createOrUpdate()" label="Salvar"  [disabled]="formulario.invalid"></button>
+        <button type="button"  pButton icon="pi pi-close" (click)="voltar()" label="Voltar" class="ui-button-danger"></button>
+        </p-footer>
+    </div>
+</div>
